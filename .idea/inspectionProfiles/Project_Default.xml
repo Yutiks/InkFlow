@@ -1,0 +1,78 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="HtmlUnknownTag" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="myValues">
+        <value>
+          <list size="7">
+            <item index="0" class="java.lang.String" itemvalue="nobr" />
+            <item index="1" class="java.lang.String" itemvalue="noembed" />
+            <item index="2" class="java.lang.String" itemvalue="comment" />
+            <item index="3" class="java.lang.String" itemvalue="noscript" />
+            <item index="4" class="java.lang.String" itemvalue="embed" />
+            <item index="5" class="java.lang.String" itemvalue="script" />
+            <item index="6" class="java.lang.String" itemvalue="hishyperlink" />
+          </list>
+        </value>
+      </option>
+      <option name="myCustomValuesEnabled" value="true" />
+    </inspection_tool>
+    <inspection_tool class="PyPep8Inspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <option name="ignoredErrors">
+        <list>
+          <option value="E501" />
+          <option value="E731" />
+          <option value="E702" />
+        </list>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyPep8NamingInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <option name="ignoredErrors">
+        <list>
+          <option value="N803" />
+          <option value="N806" />
+          <option value="N802" />
+        </list>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyUnresolvedReferencesInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredIdentifiers">
+        <list>
+          <option value="dict.get" />
+          <option value="lcpe.lcpe.models.UserProfile.*" />
+          <option value="lcpe.lcpe.models.UserSettings.objects" />
+          <option value="lcpe.lcpe.models.UserSettings.*" />
+          <option value="lcpe.lcpe.models.UserContent.*" />
+          <option value="lcpe.lcpe.models.Exercise.*" />
+          <option value="lcpe.lcpe.models.DailyLog.*" />
+          <option value="lcpe.lcpe.models.Meal.*" />
+          <option value="lcpe.lcpe.models.DiarySettings.*" />
+          <option value="lcpe.lcpe.admin.accounts" />
+          <option value="lcpe.lcpe.views.*" />
+          <option value="lcpe.main.views.accounts" />
+          <option value="lcpe.food.models.meals.Meal.objects" />
+          <option value="lcpe.food.models.meals.MealEntry.objects" />
+          <option value="lcpe.psychology.models.cscai2.CSAI2Result.objects" />
+          <option value="lcpe.content.models.user_content.UserContent.objects" />
+          <option value="lcpe.content.models.user_content.UserContent.DoesNotExist" />
+          <option value="lcpe.diary.models.daily_log.DailyLog.objects" />
+          <option value="lcpe.diary.models.diary_settings.DiarySettings.objects" />
+          <option value="lcpe.training.models.training_plan.TrainingPlan.objects" />
+          <option value="lcpe.training.models.training_session.TrainingSession.objects" />
+          <option value="lcpe.training.models.fitness_test_results.FitnessTestResult.objects" />
+          <option value="lcpe.training.models.training_plan.TrainingWeek.objects" />
+          <option value="lcpe.accounts.models.notification_settings.UserNotificationSettings.objects" />
+          <option value="lcpe.accounts.models.settings.UserSettings.objects" />
+          <option value="lcpe.accounts.models.profile.UserProfile.objects" />
+          <option value="lcpe.food.models.food.Food.objects" />
+          <option value="lcpe.food.models.meals.MealItem.objects" />
+          <option value="lcpe.psychology.models.scat.SCATResult.objects" />
+          <option value="lcpe.psychology.models.poms.POMSResult.objects" />
+          <option value="lcpe.psychology.models.teosq.TEOSQResult.objects" />
+          <option value="lcpe.training.views.psychology" />
+          <option value="lcpe.training.models.training_plan.TrainingWeekDay.objects" />
+        </list>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>
