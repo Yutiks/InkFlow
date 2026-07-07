@@ -1,0 +1,68 @@
+/* =========================
+   3. ТЕКСТУРА ФОНА
+   ========================= */
+
+/* Лёгкое свечение + бумажная текстура через CSS — без картинок.
+   Убрать — просто удалить этот блок. */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 50% at 50% -10%, rgba(158, 49, 49, .07), transparent 60%),
+    repeating-linear-gradient(0deg, transparent 0 2px, rgba(255, 255, 255, .006) 2px 4px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+
+/* =========================
+   4. ЛЕЙАУТ
+   ========================= */
+
+.wrap {
+  position: relative;
+  z-index: 1;
+  max-width: var(--wrap-max);
+  margin: 0 auto;
+  padding: 0 var(--wrap-padding);
+}
+
+a {
+  color: var(--iron-red);
+  text-decoration: none;
+  transition: color var(--ease);
+}
+
+a:hover {
+  color: var(--iron-red-2);
+}
+
+/* --- крупный декоративный заголовок --- */
+h1, .h1 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: var(--text-hero);
+  line-height: 1.02;
+  letter-spacing: 0.01em;
+  color: var(--bone);
+}
+
+h2, .h2 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: var(--text-lg);
+  color: var(--bone);
+}
+
+h3, .h3 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 1.25rem;
+  color: var(--bone);
+}
+
+p {
+  color: var(--bone);
+  font-size: var(--text-base);
+}

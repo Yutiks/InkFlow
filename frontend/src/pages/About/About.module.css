@@ -1,0 +1,5 @@
+.title {
+    color: var(--bone);
+    font-family: var(--font-display);
+    font-size: var(--text-hero);
+}
