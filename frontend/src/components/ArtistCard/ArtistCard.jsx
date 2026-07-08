@@ -1,7 +1,8 @@
 import styles from "./ArtistCard.module.css";
 import Button from "../../components/Button/Button";
+import { Link } from "react-router-dom";
 
-function ArtistCard({ name, style, image }) {
+function ArtistCard({ name, style, image, slug }) {
     return (
         <article className={styles.card}>
             <img
@@ -15,9 +16,11 @@ function ArtistCard({ name, style, image }) {
 
                 <p>{style}</p>
 
-                <Button variant="secondary">
-                    View Profile
-                </Button>
+                <Link to={`/artists/${slug}`}>
+                    <Button variant="secondary">
+                        View Profile
+                    </Button>
+                </Link>
             </div>
         </article>
     );

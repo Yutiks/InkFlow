@@ -23,6 +23,7 @@ function AppRouter() {
                     <Route path="/about" element={<About />} />
                     <Route path="/artists" element={<Artists />} />
                     <Route path="/artist" element={<Artist />} />
+                    <Route path="/artists/:slug" element={<Artist />} />
                     <Route path="/portfolio" element={<Portfolio />} />
                     <Route path="/services" element={<Services />} />
                     <Route path="/pricing" element={<Pricing />} />
