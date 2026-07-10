@@ -1,45 +1,34 @@
-from fastapi import APIRouter, HTTPException
-from app.schemas.artist import Artist
+from fastapi import APIRouter, Depends, HTTPException
+from sqlalchemy.orm import Session
+
+from app.database.database import get_db
+from app.schemas.artist import Artist, ArtistCreate
+from app.services.artist_service import ArtistService
 
 router = APIRouter()
 
-artists = [
-    Artist(
-        id=1,
-        name="Ivan Polit",
-        slug="ivan-polit",
-        style="Blackwork",
-        image="https://picsum.photos/500/700?1",
-    ),
-    Artist(
-        id=2,
-        name="Emma Stone",
-        slug="emma-stone",
-        style="Fine Line",
-        image="https://picsum.photos/500/700?2",
-    ),
-    Artist(
-        id=3,
-        name="Daniel Fox",
-        slug="daniel-fox",
-        style="Realism",
-        image="https://picsum.photos/500/700?3",
-    ),
-]
+
+@router.post("/", response_model=Artist)
+def create_artist(
+    artist: ArtistCreate,
+    db: Session = Depends(get_db),
+):
+    return ArtistService.create(db, artist)
 
 
 @router.get("/", response_model=list[Artist])
-def get_artists():
-    return artists
+def get_artists(db: Session = Depends(get_db)):
+    return ArtistService.get_all(db)
 
 
 @router.get("/{slug}", response_model=Artist)
-def get_artist(slug: str):
-    for artist in artists:
-        if artist.slug == slug:
-            return artist
+def get_artist(slug: str, db: Session = Depends(get_db)):
+    artist = ArtistService.get_by_slug(db, slug)
 
-    raise HTTPException(
-        status_code=404,
-        detail="Artist not found",
-    )
+    if artist is None:
+        raise HTTPException(
+            status_code=404,
+            detail="Artist not found",
+        )
+
+    return artist

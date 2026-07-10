@@ -1,10 +1,12 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
-DATABASE_URL = "postgresql+psycopg://localhost/inkflow"
+from app.core.config import settings
+
+from sqlalchemy.orm import Session
 
 engine = create_engine(
-    DATABASE_URL,
+    settings.DATABASE_URL,
     echo=True,
 )
 
@@ -13,3 +15,12 @@ SessionLocal = sessionmaker(
     autoflush=False,
     bind=engine,
 )
+
+
+def get_db():
+    db: Session = SessionLocal()
+
+    try:
+        yield db
+    finally:
+        db.close()
