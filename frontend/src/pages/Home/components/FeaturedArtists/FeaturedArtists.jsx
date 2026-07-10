@@ -1,11 +1,21 @@
 import styles from "./FeaturedArtists.module.css";
 import ArtistCard from "../../../../components/ArtistCard/ArtistCard";
-import artists from "../../../../data/artists";
-
-
+import { useEffect, useState } from "react";
+import { getArtists } from "../../../../api/artists";
 
 
 function FeaturedArtists() {
+    const [artists, setArtists] = useState([]);
+
+    useEffect(() => {
+        async function loadArtists() {
+            const data = await getArtists();
+            setArtists(data);
+        }
+
+        loadArtists();
+    }, []);
+
     return (
         <section className={styles.section}>
             <div className={styles.container}>

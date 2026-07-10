@@ -1,16 +1,24 @@
 import styles from "./Artist.module.css";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import artists from "../../data/artists";
+import { getArtist } from "@/api/artists";
 
 function Artist() {
     const { slug } = useParams();
 
-    const artist = artists.find(
-        (artist) => artist.slug === slug
-    );
+    const [artist, setArtist] = useState(null);
+
+    useEffect(() => {
+        async function loadArtist() {
+            const data = await getArtist(slug);
+            setArtist(data);
+        }
+
+        loadArtist();
+    }, [slug]);
 
     if (!artist) {
-        return <h1>Artist not found</h1>;
+        return <h1>Loading...</h1>;
     }
 
     return (
