@@ -1,4 +1,4 @@
-import { Outlet } from "react-router-dom";
+import { NavLink, Outlet } from "react-router-dom";
 
 function AdminLayout() {
     return (
@@ -8,11 +8,37 @@ function AdminLayout() {
 
                 <nav>
                     <ul>
-                        <li>Dashboard</li>
-                        <li>Artists</li>
-                        <li>Services</li>
-                        <li>Portfolio</li>
-                        <li>Bookings</li>
+                        <li>
+                            <NavLink to="/admin">
+                                Dashboard
+                            </NavLink>
+                        </li>
+
+                        <li>
+                            <NavLink to="/admin/artists">
+                                Artists
+                            </NavLink>
+                        </li>
+
+                        {/*
+                        <li>
+                            <NavLink to="/admin/services">
+                                Services
+                            </NavLink>
+                        </li>
+
+                        <li>
+                            <NavLink to="/admin/portfolio">
+                                Portfolio
+                            </NavLink>
+                        </li>
+
+                        <li>
+                            <NavLink to="/admin/bookings">
+                                Bookings
+                            </NavLink>
+                        </li>
+                        */}
                     </ul>
                 </nav>
             </aside>

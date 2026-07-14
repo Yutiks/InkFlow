@@ -30,3 +30,8 @@ export async function updateArtist(id, artist) {
     const response = await client.put(`/artists/${id}`, artist);
     return response.data;
 }
+
+export async function deleteArtist(id) {
+    const response = await client.delete(`/artists/${id}`);
+    return response.data;
+}

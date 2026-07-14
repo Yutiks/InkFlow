@@ -34,3 +34,25 @@
 .secondary:hover {
     border-color: var(--brass);
 }
+
+.danger {
+    background: #b91c1c;
+
+    color: var(--bone);
+}
+
+.danger:hover {
+    background: #991b1b;
+}
+
+.ghost {
+    background: transparent;
+
+    color: var(--muted);
+
+    border: none;
+}
+
+.ghost:hover {
+    color: var(--bone);
+}

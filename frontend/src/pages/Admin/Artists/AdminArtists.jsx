@@ -1,26 +1,42 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-import { getArtists } from "@/api/artists";
+import { deleteArtist, getArtists } from "@/api/artists";
+import Button from "@/components/Button/Button";
 
 function AdminArtists() {
     const [artists, setArtists] = useState([]);
-
-    useEffect(() => {
-        async function loadArtists() {
+    async function loadArtists() {
             const data = await getArtists();
             setArtists(data);
         }
 
+    useEffect(() => {
         loadArtists();
     }, []);
+
+    async function handleDelete(id) {
+        const confirmed = window.confirm(
+            "Are you sure you want to delete this artist?"
+        );
+
+        if (!confirmed) {
+            return;
+        }
+
+        await deleteArtist(id);
+
+        loadArtists();
+    }
 
     return (
         <section>
             <h1>Manage Artists</h1>
 
             <Link to="/admin/artists/new">
-                Add Artist
+                <Button variant="ghost">
+                    Add Artist
+                </Button>
             </Link>
 
             <table>
@@ -40,9 +56,16 @@ function AdminArtists() {
 
                             <td>
                                 <Link to={`/admin/artists/${artist.id}/edit`}>
-                                    Edit
+                                    <Button variant="ghost">
+                                        Edit
+                                    </Button>
                                 </Link>
-                                <button>Delete</button>
+                                <Button
+                                    variant="danger"
+                                    onClick={() => handleDelete(artist.id)}
+                                >
+                                    Delete
+                                </Button>
                             </td>
                         </tr>
                     ))}

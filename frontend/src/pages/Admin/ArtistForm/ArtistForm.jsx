@@ -7,6 +7,9 @@ import {
     updateArtist,
 } from "@/api/artists";
 
+import Input from "@/components/Input/Input";
+import Button from "@/components/Button/Button";
+
 function ArtistForm() {
     const navigate = useNavigate();
     const { id } = useParams();
@@ -64,37 +67,41 @@ function ArtistForm() {
 
             <form onSubmit={handleSubmit}>
 
-                <input
+                <Input
+                    label="Name"
                     name="name"
                     placeholder="Name"
                     value={form.name}
                     onChange={handleChange}
                 />
 
-                <input
+                <Input
+                    label="Slug"
                     name="slug"
                     placeholder="Slug"
                     value={form.slug}
                     onChange={handleChange}
                 />
 
-                <input
+                <Input
+                    label="Style"
                     name="style"
                     placeholder="Style"
                     value={form.style}
                     onChange={handleChange}
                 />
 
-                <input
+                <Input
+                    label="Image URL"
                     name="image"
                     placeholder="Image URL"
                     value={form.image}
                     onChange={handleChange}
                 />
 
-                <button type="submit">
+                <Button type="submit" variant="primary">
                     Save
-                </button>
+                </Button>
 
             </form>
         </section>
