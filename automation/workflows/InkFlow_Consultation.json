@@ -1,0 +1,64 @@
+{
+  "name": "InkFlow_Consultation",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "consultation",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "804d7dca-4abc-42b4-b09b-6d7a830664a5",
+      "name": "Webhook",
+      "webhookId": "c66f8672-d874-42d4-bad4-bd5619bb7a57"
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "{\n  \"success\": true,\n  \"message\": \"Consultation request received\"\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.5,
+      "position": [
+        224,
+        0
+      ],
+      "id": "342f4daa-b00a-4c14-a812-33ec7b557728",
+      "name": "Respond to Webhook"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "availableInMCP": false
+  },
+  "versionId": "0cd41cb7-1b8a-4144-be3e-27f4eb406c42",
+  "meta": {
+    "instanceId": "edaba51bf95bbea573c0abd223ea4356948353c2318c5f7d8c1d4a5a23a41eef"
+  },
+  "nodeGroups": [],
+  "id": "QaqJRzfy0CginLJj",
+  "tags": []
+}
